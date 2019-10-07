@@ -15,10 +15,10 @@ new Vue({
   data: {
     message: 'hellow caldremch',
     name: 'caldremch'
-  },
-  computed:{
-    reversedMessage: function(){
-      return this.name.split('').reverse().join('')
-    }
   }
+  // computed:{
+  //   reversedMessage: function(){
+  //     return this.name.split('').reverse().join('')
+  //   }
+  // }
 })
