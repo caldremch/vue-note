@@ -1,24 +1,41 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+//vue 组件树
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+// Vue.component('my-header', {
+//   template:'<p> this is my header {{ msgInner }} haha</p>',
+//   data:{
+//     msgInner: "this is my header"
+//   }
+// })
 
-Vue.config.productionTip = false
+var myHeader2 = {
+  template:'<p> this is the second </p>'
+}
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>',
-  data: {
-    message: 'hellow caldremch',
-    name: 'caldremch'
-  }
-  // computed:{
-  //   reversedMessage: function(){
-  //     return this.name.split('').reverse().join('')
-  //   }
-  // }
+var myHeader = {
+    template:'<p>this is the first <my-header-second>t</my-header-second></p>',
+    components:{
+      'my-header-second' : myHeader2
+    }
+}
+
+// 实例1
+// var root = new Vue({
+//     el:'#app',
+//     // template: "<p>{{ msg }}</p>",
+//     data:{
+//         msg: 'hello caldremch learn vue'
+//     }
+//     ,components:{
+//       'my-header':myHeader
+//     }
+// })
+
+//实例2
+var root = new Vue({
+  el:'#app',
+  render: h => h(App)
 })
+
+
+
