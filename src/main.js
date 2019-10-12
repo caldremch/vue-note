@@ -1,4 +1,4 @@
-//vue 组件树
+// vue 组件树
 import Vue from 'vue'
 import App from './App'
 // Vue.component('my-header', {
@@ -9,14 +9,14 @@ import App from './App'
 // })
 
 var myHeader2 = {
-  template:'<p> this is the second </p>'
+  template: '<p> this is the second </p>'
 }
 
 var myHeader = {
-    template:'<p>this is the first <my-header-second>t</my-header-second></p>',
-    components:{
-      'my-header-second' : myHeader2
-    }
+  template: '<p>this is the first <my-header-second>t</my-header-second></p>',
+  components: {
+    'my-header-second': myHeader2
+  }
 }
 
 // 实例1
@@ -31,11 +31,8 @@ var myHeader = {
 //     }
 // })
 
-//实例2
+// 实例2
 var root = new Vue({
-  el:'#app',
+  el: '#app',
   render: h => h(App)
 })
-
-
-
